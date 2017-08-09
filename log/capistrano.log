@@ -9,3 +9,29 @@
   INFO ---------------------------------------------------------------------------
   INFO [3bd52bee] Running export docker_cont_id=$(docker ps -a | grep arpitjindal1997/telegram-msmartpay | cut -d ' ' -f 1 ) && docker stop $docker_cont_id && docker rm $docker_cont_id as root@139.59.71.230
  DEBUG [3bd52bee] Command: export docker_cont_id=$(docker ps -a | grep arpitjindal1997/telegram-msmartpay | cut -d ' ' -f 1 ) && docker stop $docker_cont_id && docker rm $docker_cont_id
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-08-09 20:08:38 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [fe8ac9b7] Running export docker_cont_id=$(docker ps -a | grep arpitjindal1997/telegram-msmartpay | cut -d ' ' -f 1 ) && docker stop $docker_cont_id && docker rm $docker_cont_id as root@139.59.71.230
+ DEBUG [fe8ac9b7] Command: export docker_cont_id=$(docker ps -a | grep arpitjindal1997/telegram-msmartpay | cut -d ' ' -f 1 ) && docker stop $docker_cont_id && docker rm $docker_cont_id
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-08-09 20:11:20 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [2e820de6] Running export docker_cont_id=$(docker ps -a | grep arpitjindal1997/telegram-msmartpay | cut -d ' ' -f 1 ) && docker stop $docker_cont_id && docker rm $docker_cont_id as root@139.59.71.230
+ DEBUG [2e820de6] Command: export docker_cont_id=$(docker ps -a | grep arpitjindal1997/telegram-msmartpay | cut -d ' ' -f 1 ) && docker stop $docker_cont_id && docker rm $docker_cont_id
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-08-09 20:12:55 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [6f0a3588] Running export docker_cont_id=$(docker ps -a | grep arpitjindal1997/telegram-msmartpay | cut -d ' ' -f 1 ) && docker stop $docker_cont_id && docker rm $docker_cont_id as root@139.59.71.230
+ DEBUG [6f0a3588] Command: export docker_cont_id=$(docker ps -a | grep arpitjindal1997/telegram-msmartpay | cut -d ' ' -f 1 ) && docker stop $docker_cont_id && docker rm $docker_cont_id
+ DEBUG [6f0a3588] 	"docker stop" requires at least 1 argument(s).
+See 'docker stop --help'.
+
+Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]
+
+Stop one or more running containers
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-08-09 20:27:27 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [5a233707] Running export docker_cont_id=$(docker ps -a | grep arpitjindal1997/telegram-msmartpay | cut -d ' ' -f 1 ) && if [ "$DEPLOY_KEY_PASS" == "" ];then exit 0; else docker stop $docker_cont_id && docker rm $docker_cont_id; fi as root@139.59.71.230
+ DEBUG [5a233707] Command: export docker_cont_id=$(docker ps -a | grep arpitjindal1997/telegram-msmartpay | cut -d ' ' -f 1 ) && if [ "$DEPLOY_KEY_PASS" == "" ];then exit 0; else docker stop $docker_cont_id && docker rm $docker_cont_id; fi
