@@ -1,5 +1,7 @@
 language: go
 services: docker
+before_install:
+        - gem install capistrano
 before_script:
         - env|sort
         - image="arpitjindal1997/telegram-msmartpay:latest"
