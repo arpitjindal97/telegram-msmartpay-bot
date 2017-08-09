@@ -44,7 +44,7 @@
   set :ssh_options, {
 	  keys: %w(config/deploy_id.key),
     forward_agent: false,
-    auth_method: %w(password),
+    auth_methods: %w(password),
     password: ENV["DEPLOY_KEY_PASS"]
   }
 #

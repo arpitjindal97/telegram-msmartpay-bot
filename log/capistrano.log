@@ -1,0 +1,11 @@
+# Logfile created on 2017-08-09 19:57:57 +0530 by logger.rb/56815
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-08-09 19:57:57 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [4ee2cda4] Running export docker_cont_id=$(docker ps -a | grep arpitjindal1997/telegram-msmartpay | cut -d ' ' -f 1 ) && docker stop $docker_cont_id && docker rm $docker_cont_id as root@139.59.71.230
+ DEBUG [4ee2cda4] Command: export docker_cont_id=$(docker ps -a | grep arpitjindal1997/telegram-msmartpay | cut -d ' ' -f 1 ) && docker stop $docker_cont_id && docker rm $docker_cont_id
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-08-09 20:00:19 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [3bd52bee] Running export docker_cont_id=$(docker ps -a | grep arpitjindal1997/telegram-msmartpay | cut -d ' ' -f 1 ) && docker stop $docker_cont_id && docker rm $docker_cont_id as root@139.59.71.230
+ DEBUG [3bd52bee] Command: export docker_cont_id=$(docker ps -a | grep arpitjindal1997/telegram-msmartpay | cut -d ' ' -f 1 ) && docker stop $docker_cont_id && docker rm $docker_cont_id
