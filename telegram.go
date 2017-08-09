@@ -51,6 +51,8 @@ func main() {
 			continue
 		}
 		//log.Printf("[%s] %s", update.Message.From.UserName, update.Message.Text)
+		msg := tgbotapi.NewMessage(update.Message.Chat.ID, "Processing ...")
+		bot.Send(msg)
 		Block{
 
 			Try: func() {

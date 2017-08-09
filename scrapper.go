@@ -73,11 +73,12 @@ func main1(vals [3]string) string {
 	elem = elements[1]
 	elem.Click()
 
+	time.Sleep(1*time.Second)
+
 	elements, _ = wd.FindElements(selenium.ByXPATH,"//td[@valign='middle']")
 
 	return_str  = return_str + ("\nAmount after: "+extractAmount(elements))
 
-	time.Sleep(1*time.Second)
 	return return_str
 }
 
