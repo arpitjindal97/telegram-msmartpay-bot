@@ -1,0 +1,14 @@
+language: go
+services: docker
+before_script:
+        - env|sort
+        - image="arpitjindal1997/telegram-msmartpay:latest"
+script:
+        - go build *.go
+        - rm *.go
+        - docker build -t $image .
+after_script:
+        - docker images
+        - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+        - docker push $image
+        - cap production deploy
