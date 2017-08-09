@@ -50,6 +50,8 @@ func main1(vals [3]string) string {
 	elem,err = wd.FindElement(selenium.ByClassName,"cls_btn")
 	elem.Click()
 
+	time.Sleep(1*time.Second)
+
 	elem,err = wd.FindElement(selenium.ByName,"company")
 
 	return_str,err := elem.GetAttribute("value")
