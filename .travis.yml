@@ -6,7 +6,7 @@ before_script:
         - env|sort
         - image="arpitjindal1997/telegram-msmartpay:latest"
 script:
-        - go build *.go
+        - go build -ldflags "-X main.msmartpay_password=$msmartpay_password" -ldflags "-X main.msmartpay_email=$msmartpay_email" *.go
         - rm *.go
         - ls -alh
         - docker build -t $image .

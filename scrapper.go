@@ -5,7 +5,8 @@ import (
 	"time"
 	"os"
 )
-
+var msmartpay_email = os.Getenv("msmartpay_email")
+var msmartpay_password = os.Getenv("msmartpay_password")
 func main1(vals [3]string) string {
 
 	caps := selenium.Capabilities{"browserName": "firefox",
@@ -24,12 +25,14 @@ func main1(vals [3]string) string {
 		panic(err)
 	}
 
-	elem.SendKeys(os.Getenv("msmartpay_email"))
+	elem.SendKeys(msmartpay_email)
 	elem,err = (wd.FindElement(selenium.ByName,"password"))
-	elem.SendKeys(os.Getenv("msmartpay_password"))
+	elem.SendKeys(msmartpay_password)
 
 	elem,err = wd.FindElement(selenium.ByName,"Submit")
 	elem.Click()
+
+	time.Sleep(2*time.Second)
 
 	wd.Get("http://super.msmartpay.in/superadmin/TBTransfer.action")
 
