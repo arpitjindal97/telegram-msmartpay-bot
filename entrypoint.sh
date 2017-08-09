@@ -3,5 +3,5 @@
 export DISPLAY=:0
 Xvfb :0 &
 cd /arpit
-java -jar selenium-server-standalone-*.jar &
+java -jar selenium-server-standalone.jar &
 ./scrapper
