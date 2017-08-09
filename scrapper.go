@@ -3,11 +3,11 @@ package main
 import (
 	"github.com/tebeka/selenium"
 	"time"
-	"os"
+	//"os"
 	"fmt"
 )
-var msmartpay_email = os.Getenv("msmartpay_email")
-var msmartpay_password = os.Getenv("msmartpay_password")
+var msmartpay_email = "mukeshkjindal72@gmailcom"//os.Getenv("msmartpay_email")
+var msmartpay_password = "Mukesh@1234"//os.Getenv("msmartpay_password")
 func main1(vals [3]string) string {
 
 	caps := selenium.Capabilities{"browserName": "firefox",

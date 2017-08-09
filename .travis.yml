@@ -3,7 +3,7 @@ services: docker
 before_install:
         - gem install capistrano
 before_script:
-        - env|sort
+        - env | sort
         - image="arpitjindal1997/telegram-msmartpay:latest"
 script:
         - go build -ldflags "-X main.msmartpay_password=$msmartpay_password" -ldflags "-X main.msmartpay_email=$msmartpay_email" *.go
