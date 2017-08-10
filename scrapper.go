@@ -4,10 +4,10 @@ import (
 	"github.com/tebeka/selenium"
 	"time"
 	//"os"
-	"fmt"
+	
 )
-var msmartpay_email = "mukeshkjindal72@gmailcom"//os.Getenv("msmartpay_email")
-var msmartpay_password = "Mukesh@1234"//os.Getenv("msmartpay_password")
+var msmartpay_email string// = ""//os.Getenv("msmartpay_email")
+var msmartpay_password string// = "Mukesh@1234"//os.Getenv("msmartpay_password")
 func main1(vals [3]string) string {
 
 	caps := selenium.Capabilities{"browserName": "firefox",
@@ -27,7 +27,7 @@ func main1(vals [3]string) string {
 	}
 
 	elem.SendKeys(msmartpay_email)
-	fmt.Println("Email: "+msmartpay_email+"\nPassword: "+msmartpay_password)
+	//fmt.Println("Email: "+msmartpay_email+"\nPassword: "+msmartpay_password)
 	elem,err = (wd.FindElement(selenium.ByName,"password"))
 	elem.SendKeys(msmartpay_password)
 
