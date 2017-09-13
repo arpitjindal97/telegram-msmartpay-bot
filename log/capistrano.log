@@ -1,0 +1,213 @@
+# Logfile created on 2017-09-12 23:13:37 +0530 by logger.rb/56815
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-12 23:13:37 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [da0c444c] Running export docker_cont_id=$(docker ps -a | grep $DOCKER_USERNAME/telegram-msmartpay | cut -d ' ' -f 1 ); if [ "$docker_cont_id=" == "" ];then exit 0; else 	docker stop $docker_cont_id; docker rm $docker_cont_id; docker rmi $DOCKER_USERNAME/telegram-msmartpay; fi on 
+ DEBUG [da0c444c] Command: export docker_cont_id=$(docker ps -a | grep $DOCKER_USERNAME/telegram-msmartpay | cut -d ' ' -f 1 ); if [ "$docker_cont_id=" == "" ];then exit 0; else 	docker stop $docker_cont_id; docker rm $docker_cont_id; docker rmi $DOCKER_USERNAME/telegram-msmartpay; fi
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-12 23:34:26 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [a1dd844a] Running /usr/bin/env mkdir -p /tmp as $server_1_user@$server_1_host
+ DEBUG [a1dd844a] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-12 23:35:39 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [ae4a5503] Running /usr/bin/env mkdir -p /tmp as $server_1_user@#{fetch(server_1_host)}
+ DEBUG [ae4a5503] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-12 23:40:26 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [cc695dec] Running /usr/bin/env mkdir -p /tmp as $server_1_user@#{fetch(
+ DEBUG [cc695dec] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-12 23:44:02 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [d4ebe01b] Running /usr/bin/env mkdir -p /tmp as $server_1_user@ENV['server_1_host']
+ DEBUG [d4ebe01b] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-12 23:44:21 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [05eab09f] Running /usr/bin/env mkdir -p /tmp as $server_1_user@ENV['server_1_host']
+ DEBUG [05eab09f] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-12 23:49:47 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [d779e938] Running /usr/bin/env mkdir -p /tmp as $server_1_user@"#{fetch(
+ DEBUG [d779e938] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-12 23:50:30 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [20abb33b] Running /usr/bin/env mkdir -p /tmp as $server_1_user@#{fetch(
+ DEBUG [20abb33b] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-12 23:51:39 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [7b486211] Running /usr/bin/env mkdir -p /tmp as #{fetch(:server_user)}@#{fetch(
+ DEBUG [7b486211] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-12 23:53:45 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [e04912b0] Running /usr/bin/env mkdir -p /tmp as #{fetch(:server_user)}@fetch(
+ DEBUG [e04912b0] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-12 23:54:16 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [60ad4ee3] Running /usr/bin/env mkdir -p /tmp as #{fetch(:server_user)}@fetch(
+ DEBUG [60ad4ee3] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-12 23:54:42 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [4302003f] Running /usr/bin/env mkdir -p /tmp as #{fetch(:server_user)}@
+ DEBUG [4302003f] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-12 23:54:56 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [593af296] Running /usr/bin/env mkdir -p /tmp as #{fetch(:server_user)}@
+ DEBUG [593af296] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-12 23:55:29 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [7dfcb005] Running /usr/bin/env mkdir -p /tmp as #{fetch(:server_user)}@
+ DEBUG [7dfcb005] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-12 23:55:59 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [c0970a61] Running /usr/bin/env mkdir -p /tmp as #{fetch(:server_user)}@fetch(
+ DEBUG [c0970a61] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-12 23:56:17 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [e3528650] Running /usr/bin/env mkdir -p /tmp as #{fetch(:server_user)}@
+ DEBUG [e3528650] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-12 23:56:42 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [65d7a30d] Running /usr/bin/env mkdir -p /tmp as #{fetch(:server_user)}@
+ DEBUG [65d7a30d] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-12 23:59:35 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [b206cf9e] Running /usr/bin/env mkdir -p /tmp as #{fetch(:server_user)}@#{fetch(
+ DEBUG [b206cf9e] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-13 00:00:12 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [479c1a0c] Running /usr/bin/env mkdir -p /tmp as #{fetch(:server_user)}@fetch(
+ DEBUG [479c1a0c] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-13 00:00:27 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [f7f8c1e6] Running /usr/bin/env mkdir -p /tmp as #{fetch(:server_user)}@server_host
+ DEBUG [f7f8c1e6] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-13 00:00:48 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [c18ca8ba] Running /usr/bin/env mkdir -p /tmp as #{fetch(:server_user)}@server_host
+ DEBUG [c18ca8ba] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-13 00:02:27 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [a6a88ebb] Running /usr/bin/env mkdir -p /tmp as #{fetch(:server_user)}@server_host
+ DEBUG [a6a88ebb] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-13 00:03:19 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [807462fc] Running /usr/bin/env mkdir -p /tmp as :server_user@server_host
+ DEBUG [807462fc] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-13 00:05:26 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [e97d16e1] Running /usr/bin/env mkdir -p /tmp as :server_user@server_host
+ DEBUG [e97d16e1] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-13 00:06:22 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [1c8ef0ff] Running /usr/bin/env mkdir -p /tmp as :server_user@{fetch(
+ DEBUG [1c8ef0ff] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-13 00:06:36 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [4004560b] Running /usr/bin/env mkdir -p /tmp as :server_user@->{fetch(
+ DEBUG [4004560b] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-13 00:06:52 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [08b88925] Running /usr/bin/env mkdir -p /tmp as :server_user@{fetch(
+ DEBUG [08b88925] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-13 00:07:58 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [0f56b257] Running /usr/bin/env mkdir -p /tmp as :server_user@{fetch(
+ DEBUG [0f56b257] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-13 00:08:25 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-13 00:08:37 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-13 16:16:41 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-13 16:17:29 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-13 16:29:27 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [013489b3] Running export docker_cont_id=$(docker ps -a | grep $DOCKER_USERNAME/telegram-msmartpay | cut -d ' ' -f 1 ); if [ "$docker_cont_id=" == "" ];then exit 0; else 	docker stop $docker_cont_id; docker rm $docker_cont_id; docker rmi $DOCKER_USERNAME/telegram-msmartpay; fi as root@192.168.0.1
+ DEBUG [013489b3] Command: export docker_cont_id=$(docker ps -a | grep $DOCKER_USERNAME/telegram-msmartpay | cut -d ' ' -f 1 ); if [ "$docker_cont_id=" == "" ];then exit 0; else 	docker stop $docker_cont_id; docker rm $docker_cont_id; docker rmi $DOCKER_USERNAME/telegram-msmartpay; fi
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-13 16:29:40 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [7162a3ca] Running export docker_cont_id=$(docker ps -a | grep $DOCKER_USERNAME/telegram-msmartpay | cut -d ' ' -f 1 ); if [ "$docker_cont_id=" == "" ];then exit 0; else 	docker stop $docker_cont_id; docker rm $docker_cont_id; docker rmi $DOCKER_USERNAME/telegram-msmartpay; fi as root@192.168.0.1
+ DEBUG [7162a3ca] Command: export docker_cont_id=$(docker ps -a | grep $DOCKER_USERNAME/telegram-msmartpay | cut -d ' ' -f 1 ); if [ "$docker_cont_id=" == "" ];then exit 0; else 	docker stop $docker_cont_id; docker rm $docker_cont_id; docker rmi $DOCKER_USERNAME/telegram-msmartpay; fi
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-13 16:29:52 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [dd02dece] Running export docker_cont_id=$(docker ps -a | grep $DOCKER_USERNAME/telegram-msmartpay | cut -d ' ' -f 1 ); if [ "$docker_cont_id=" == "" ];then exit 0; else 	docker stop $docker_cont_id; docker rm $docker_cont_id; docker rmi $DOCKER_USERNAME/telegram-msmartpay; fi as root@192.168.0.1
+ DEBUG [dd02dece] Command: export docker_cont_id=$(docker ps -a | grep $DOCKER_USERNAME/telegram-msmartpay | cut -d ' ' -f 1 ); if [ "$docker_cont_id=" == "" ];then exit 0; else 	docker stop $docker_cont_id; docker rm $docker_cont_id; docker rmi $DOCKER_USERNAME/telegram-msmartpay; fi
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-13 16:30:33 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [f35fd11d] Running export docker_cont_id=$(docker ps -a | grep $DOCKER_USERNAME/telegram-msmartpay | cut -d ' ' -f 1 ); if [ "$docker_cont_id=" == "" ];then exit 0; else 	docker stop $docker_cont_id; docker rm $docker_cont_id; docker rmi $DOCKER_USERNAME/telegram-msmartpay; fi as root@192.168.0.1
+ DEBUG [f35fd11d] Command: export docker_cont_id=$(docker ps -a | grep $DOCKER_USERNAME/telegram-msmartpay | cut -d ' ' -f 1 ); if [ "$docker_cont_id=" == "" ];then exit 0; else 	docker stop $docker_cont_id; docker rm $docker_cont_id; docker rmi $DOCKER_USERNAME/telegram-msmartpay; fi
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-13 16:31:24 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [87856442] Running export docker_cont_id=$(docker ps -a | grep $DOCKER_USERNAME/telegram-msmartpay | cut -d ' ' -f 1 ); if [ "$docker_cont_id=" == "" ];then exit 0; else 	docker stop $docker_cont_id; docker rm $docker_cont_id; docker rmi $DOCKER_USERNAME/telegram-msmartpay; fi as root@192.168.0.1
+ DEBUG [87856442] Command: export docker_cont_id=$(docker ps -a | grep $DOCKER_USERNAME/telegram-msmartpay | cut -d ' ' -f 1 ); if [ "$docker_cont_id=" == "" ];then exit 0; else 	docker stop $docker_cont_id; docker rm $docker_cont_id; docker rmi $DOCKER_USERNAME/telegram-msmartpay; fi
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-13 19:15:36 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [e269df5c] Running /usr/bin/env mkdir -p /tmp as root@$DOCKER_USERNAME/telegram-msmartpay
+ DEBUG [e269df5c] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-13 19:16:12 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [1c4b3ffe] Running /usr/bin/env mkdir -p /tmp as root@$server_1_host
+ DEBUG [1c4b3ffe] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-13 19:21:30 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [95325e2a] Running /usr/bin/env mkdir -p /tmp as root@
+ DEBUG [95325e2a] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-13 19:23:57 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [13ce35d6] Running /usr/bin/env mkdir -p /tmp as root@->{fetch(
+ DEBUG [13ce35d6] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-13 19:24:12 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [a1ec93b3] Running /usr/bin/env mkdir -p /tmp as root@
+ DEBUG [a1ec93b3] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-13 19:27:21 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [ca790843] Running /usr/bin/env mkdir -p /tmp as @$server_1_host
+ DEBUG [ca790843] Command: /usr/bin/env mkdir -p /tmp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-09-13 19:27:39 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [14587edf] Running /usr/bin/env mkdir -p /tmp as $server_1_user@$server_1_host
+ DEBUG [14587edf] Command: /usr/bin/env mkdir -p /tmp
