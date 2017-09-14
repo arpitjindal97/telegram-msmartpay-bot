@@ -3,15 +3,14 @@ package main
 import (
 	"github.com/tebeka/selenium"
 	"time"
-	//"os"
 
 )
-var msmartpay_email string// = ""//os.Getenv("msmartpay_email")
-var msmartpay_password string// = "Mukesh@1234"//os.Getenv("msmartpay_password")
+var msmartpay_email string
+var msmartpay_password string
 func main1(vals [3]string) string {
 
 	caps := selenium.Capabilities{"browserName": "firefox",
-	"webdriver.gecko.driver":"/home/arpit/Desktop/geckodriver"}
+	"webdriver.gecko.driver":"geckodriver"}
 	wd, err := selenium.NewRemote(caps, "")
 	wd.SetAsyncScriptTimeout(5000)
 

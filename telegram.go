@@ -31,8 +31,9 @@ func (tcf Block) Do() {
 	tcf.Try()
 }
 
+var telegram_bot_api string
 func main() {
-	bot, err := tgbotapi.NewBotAPI("392780450:AAEdek0ZeKYbVUBP5HpvoPVnAF8uumzHbQw")
+	bot, err := tgbotapi.NewBotAPI(telegram_bot_api)
 	if err != nil {
 		log.Panic(err)
 	}
@@ -50,47 +51,53 @@ func main() {
 		if update.Message == nil {
 			continue
 		}
-		//log.Printf("[%s] %s", update.Message.From.UserName, update.Message.Text)
-		msg := tgbotapi.NewMessage(update.Message.Chat.ID, "Processing ...")
-		bot.Send(msg)
-		Block{
 
-			Try: func() {
+		messageProcessor(bot,update)
 
-				str := update.Message.Text
-				count := 0
-				var vals [3]string
-
-				for _, r := range str {
-					if r == ',' {
-						count++
-						continue
-					}
-					vals[count] = vals[count] + string(r)
-				}
-				if count == 0{
-					panic( "invalid syntax")
-				}
-
-				vals[0] = main1(vals)
-
-				msg := tgbotapi.NewMessage(update.Message.Chat.ID, vals[0])
-				//msg.ReplyToMessageID = update.Message.MessageID
-
-				bot.Send(msg)
-
-			},
-			Catch: func(e Exception) {
-				msg := tgbotapi.NewMessage(update.Message.Chat.ID, "Error Occured !!!")
-				fmt.Println(e)
-				bot.Send(msg)
-
-			},
-			Finally: func() {
-				//fmt.Println("Finally called")
-			},
-		}.Do()
 	}
 	fmt.Println("will not Reach here")
 
+}
+func messageProcessor(bot *tgbotapi.BotAPI,update tgbotapi.Update) {
+
+	//log.Printf("[%s] %s", update.Message.From.UserName, update.Message.Text)
+	msg := tgbotapi.NewMessage(update.Message.Chat.ID, "Processing ...")
+	bot.Send(msg)
+	Block{
+
+		Try: func() {
+
+			str := update.Message.Text
+			count := 0
+			var vals [3]string
+
+			for _, r := range str {
+				if r == ',' {
+					count++
+					continue
+				}
+				vals[count] = vals[count] + string(r)
+			}
+			if count == 0{
+				panic( "invalid syntax")
+			}
+
+			vals[0] = main1(vals)
+
+			msg := tgbotapi.NewMessage(update.Message.Chat.ID, vals[0])
+			//msg.ReplyToMessageID = update.Message.MessageID
+
+			bot.Send(msg)
+
+		},
+		Catch: func(e Exception) {
+			msg := tgbotapi.NewMessage(update.Message.Chat.ID, "Error Occured !!!")
+			fmt.Println(e)
+			bot.Send(msg)
+
+		},
+		Finally: func() {
+			//fmt.Println("Finally called")
+		},
+	}.Do()
 }
