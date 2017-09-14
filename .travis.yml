@@ -4,11 +4,12 @@ before_install:
         - gem install capistrano
 before_script:
         - env | sort
+        - mkdir secrets && cd secrets
         - wget --user="$BITBUCKET_EMAIL" --password="$BITBUCKET_PASS" https://bitbucket.org/arpitjindal97/secrets/raw/master/aws-doorlock-ssh.key
         - wget --user="$BITBUCKET_EMAIL" --password="$BITBUCKET_PASS" https://bitbucket.org/arpitjindal97/secrets/raw/master/docker.sh 
         - wget --user="$BITBUCKET_EMAIL" --password="$BITBUCKET_PASS" https://bitbucket.org/arpitjindal97/secrets/raw/master/msmartpay.sh
         - wget --user="$BITBUCKET_EMAIL" --password="$BITBUCKET_PASS" https://bitbucket.org/arpitjindal97/secrets/raw/master/server-1.sh
-        - ls -alh && eval $(cat *.sh)
+        - ls -alh && eval $(cat *.sh) && cd ..
         - image="$DOCKER_USERNAME/telegram-msmartpay:latest"
 script:
         - go build -ldflags "-X main.msmartpay_password=$msmartpay_password -X main.msmartpay_email=$msmartpay_email" *.go
