@@ -42,10 +42,10 @@
 # Global options
 # --------------
   set :ssh_options, {
-	  keys: %w(config/deploy_id.key),
+	  keys: %w(secrets/server-1-ssh.key),
     forward_agent: false,
     auth_methods: %w(password),
-    password: ENV["DEPLOY_KEY_PASS"]
+    password: ENV["SSH_KEY_PASS"]
   }
 #
 # The server-based syntax can be used to override options:
