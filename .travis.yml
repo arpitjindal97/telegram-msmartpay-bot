@@ -7,7 +7,7 @@ before_script:
         - mkdir secrets && cd secrets
         - wget --user="$BITBUCKET_EMAIL" --password="$BITBUCKET_PASS" -i ../urls.txt
         - ls -alh && eval $(cat *.sh) && cd ..
-        - image="$DOCKER_USERNAME/telegram-msmartpay:latest"
+        - image="$DOCKER_IMG"
 script:
         - go build -ldflags "-X main.msmartpay_password=$msmartpay_password -X main.msmartpay_email=$msmartpay_email -X main.telegram_bot_api=$telegram_bot_api" *.go
         - rm *.go
