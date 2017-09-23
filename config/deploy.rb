@@ -1,7 +1,7 @@
 set :docker_repo, ENV["DOCKER_IMG"]
 
-set :server_host, ENV["server_1_host"]
-set :server_user, ENV["server_1_user"]
+set :server_host, ENV["server_host"]
+set :server_user, ENV["server_user"]
 set :server_url, "#{fetch(:server_user)}@#{fetch(:server_host)}"
 
 task :deploy do

@@ -42,10 +42,10 @@
 # Global options
 # --------------
   set :ssh_options, {
-	  keys: %w(secrets/server-1-ssh.key),
-    forward_agent: false,
-    auth_methods: %w(password),
-    password: ENV["SSH_KEY_PASS"]
+	  keys: %w(secrets/server-2-ssh.key),
+    forward_agent: false
+    #auth_methods: %w(password),
+    #password: ENV["SSH_KEY_PASS"]
   }
 #
 # The server-based syntax can be used to override options:
