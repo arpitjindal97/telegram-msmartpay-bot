@@ -1,7 +1,7 @@
 FROM openjdk:latest
 
 RUN apt-get update \
-	&& apt-get install -y --no-install-recommends iceweasel xvfb
+	&& apt-get install -y --no-install-recommends iceweasel xvfb xauth
 
 RUN mkdir /arpit
 COPY . /arpit/
