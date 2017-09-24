@@ -1,8 +1,7 @@
 FROM openjdk:latest
 
 RUN apt-get update \
-	#&& export TERM="xterm-256color" \
-	&& apt-get install -y --no-install-recommends iceweasel xauth
+	&& apt-get install -y --no-install-recommends iceweasel xvfb xauth
 
 RUN mkdir /arpit
 COPY . /arpit/
