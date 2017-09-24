@@ -4,16 +4,35 @@ import (
 	"github.com/tebeka/selenium"
 	"time"
 
+	"os"
 )
 var msmartpay_email string
 var msmartpay_password string
 func main1(vals [3]string) string {
 
-	caps := selenium.Capabilities{"browserName": "firefox",
-	"webdriver.gecko.driver":"geckodriver"}
+	const (
+		// These paths will be different on your system.
+		seleniumPath    = "selenium-server-standalone.jar"
+		geckoDriverPath = "geckodriver"
+		port            = 8080
+	)
+	opts := []selenium.ServiceOption{
+		selenium.StartFrameBuffer(),           // Start an X frame buffer for the browser to run in.
+		selenium.GeckoDriver(geckoDriverPath), // Specify the path to GeckoDriver in order to use Firefox.
+		selenium.Output(os.Stderr),            // Output debug information to STDERR.
+	}
+	selenium.SetDebug(true)
+	service, err := selenium.NewSeleniumService(seleniumPath, port, opts...)
+	if err != nil {
+		panic(err) // panic is used only as an example and is not otherwise recommended.
+	}
+	defer service.Stop()
+
+	caps := selenium.Capabilities{"browserName": "firefox"}
 	wd, err := selenium.NewRemote(caps, "")
 	wd.SetAsyncScriptTimeout(5000)
 
+	defer wd.Close()
 	defer wd.Quit()
 
 	if err := wd.Get("http://super.msmartpay.in/superadmin/login.jsp"); err != nil {
@@ -78,6 +97,7 @@ func main1(vals [3]string) string {
 
 	return_str  = return_str + ("\nAmount after: "+extractAmount(elements))
 
+	wd.Close()
 	return return_str
 }
 
