@@ -5,6 +5,7 @@ import (
 	"time"
 
 	"os"
+	"fmt"
 )
 var msmartpay_email string
 var msmartpay_password string
@@ -29,7 +30,7 @@ func main1(vals [3]string) string {
 	defer service.Stop()
 
 	caps := selenium.Capabilities{"browserName": "firefox"}
-	wd, err := selenium.NewRemote(caps, "")
+	wd, err := selenium.NewRemote(caps, fmt.Sprintf("http://localhost:%d/wd/hub", port))
 	wd.SetAsyncScriptTimeout(5000)
 
 	defer wd.Close()
