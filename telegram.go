@@ -4,6 +4,8 @@ import (
 	"log"
 	"gopkg.in/telegram-bot-api.v4"
 	"fmt"
+	"github.com/tebeka/selenium"
+	"os"
 )
 
 type Block struct {
@@ -41,6 +43,24 @@ func main() {
 	//bot.Debug = true
 
 	log.Printf("Authorized on account %s", bot.Self.UserName)
+
+	const (
+		// These paths will be different on your system.
+		seleniumPath    = "selenium-server-standalone.jar"
+		geckoDriverPath = "geckodriver"
+		port            = 8080
+	)
+	opts := []selenium.ServiceOption{
+		selenium.StartFrameBuffer(),           // Start an X frame buffer for the browser to run in.
+		selenium.GeckoDriver(geckoDriverPath), // Specify the path to GeckoDriver in order to use Firefox.
+		selenium.Output(os.Stderr),            // Output debug information to STDERR.
+	}
+	selenium.SetDebug(true)
+	service, err := selenium.NewSeleniumService(seleniumPath, port, opts...)
+	if err != nil {
+		panic(err) // panic is used only as an example and is not otherwise recommended.
+	}
+	defer service.Stop()
 
 	u := tgbotapi.NewUpdate(0)
 	u.Timeout = 30

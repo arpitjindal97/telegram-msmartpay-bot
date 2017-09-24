@@ -6,10 +6,11 @@ RUN apt-get update \
 RUN mkdir /arpit
 COPY . /arpit/
 
-RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.18.0/geckodriver-v0.18.0-linux64.tar.gz
+RUN wget -O geckodriver.tar.gz \
+	$(curl -s https://api.github.com/repos/mozilla/geckodriver/releases/6998290 | grep browser_download_url | grep linux64 | cut -d '"' -f 4)
 
-RUN tar -xzvf geckodriver-*-linux64.tar.gz
-RUN cp geckodriver /arpit/ && rm geckodriver-*-linux64.tar.gz
+RUN tar -xzvf geckodriver.tar.gz
+RUN cp geckodriver /arpit/ && rm geckodriver.tar.gz
 
 RUN wget -O selenium-server-standalone.jar https://goo.gl/s4o9Vx
 RUN cp selenium-server-standalone.jar /arpit/

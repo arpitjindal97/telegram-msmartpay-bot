@@ -3,34 +3,15 @@ package main
 import (
 	"github.com/tebeka/selenium"
 	"time"
-
-	"os"
 	"fmt"
 )
 var msmartpay_email string
 var msmartpay_password string
+
 func main1(vals [3]string) string {
 
-	const (
-		// These paths will be different on your system.
-		seleniumPath    = "selenium-server-standalone.jar"
-		geckoDriverPath = "geckodriver"
-		port            = 8080
-	)
-	opts := []selenium.ServiceOption{
-		selenium.StartFrameBuffer(),           // Start an X frame buffer for the browser to run in.
-		selenium.GeckoDriver(geckoDriverPath), // Specify the path to GeckoDriver in order to use Firefox.
-		selenium.Output(os.Stderr),            // Output debug information to STDERR.
-	}
-	selenium.SetDebug(true)
-	service, err := selenium.NewSeleniumService(seleniumPath, port, opts...)
-	if err != nil {
-		panic(err) // panic is used only as an example and is not otherwise recommended.
-	}
-	defer service.Stop()
-
 	caps := selenium.Capabilities{"browserName": "firefox"}
-	wd, err := selenium.NewRemote(caps, fmt.Sprintf("http://localhost:%d/wd/hub", port))
+	wd, err := selenium.NewRemote(caps, fmt.Sprintf("http://localhost:%d/wd/hub", 8080))
 	wd.SetAsyncScriptTimeout(5000)
 
 	defer wd.Close()
