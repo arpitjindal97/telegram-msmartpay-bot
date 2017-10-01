@@ -11,7 +11,7 @@ var msmartpay_password string
 func main1(vals [3]string) string {
 
 	caps := selenium.Capabilities{"browserName": "firefox"}
-	wd, err := selenium.NewRemote(caps, fmt.Sprintf("http://localhost:%d/wd/hub", 8080))
+	wd, err := selenium.NewRemote(caps, fmt.Sprintf("http://localhost:%d/wd/hub", 8081))
 	wd.SetAsyncScriptTimeout(5000)
 
 	defer wd.Close()
@@ -34,9 +34,10 @@ func main1(vals [3]string) string {
 	elem,err = wd.FindElement(selenium.ByName,"Submit")
 	elem.Click()
 
-	time.Sleep(2*time.Second)
+	time.Sleep(1*time.Second)
 
 	wd.Get("http://super.msmartpay.in/superadmin/TBTransfer.action")
+	time.Sleep(1*time.Second)
 
 	elem,err = wd.FindElement(selenium.ByID,"reqId")
 	if err !=nil {

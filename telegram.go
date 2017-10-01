@@ -48,7 +48,7 @@ func main() {
 		// These paths will be different on your system.
 		seleniumPath    = "selenium-server-standalone.jar"
 		geckoDriverPath = "geckodriver"
-		port            = 8080
+		port            = 8081
 	)
 	opts := []selenium.ServiceOption{
 		selenium.StartFrameBuffer(),           // Start an X frame buffer for the browser to run in.
