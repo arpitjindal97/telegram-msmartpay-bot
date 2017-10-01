@@ -83,6 +83,7 @@ func messageProcessor(bot *tgbotapi.BotAPI,update tgbotapi.Update) {
 	//log.Printf("[%s] %s", update.Message.From.UserName, update.Message.Text)
 	msg := tgbotapi.NewMessage(update.Message.Chat.ID, "Processing ...")
 	bot.Send(msg)
+	var wd selenium.WebDriver
 	Block{
 
 		Try: func() {
@@ -101,8 +102,10 @@ func messageProcessor(bot *tgbotapi.BotAPI,update tgbotapi.Update) {
 			if count == 0{
 				panic( "invalid syntax")
 			}
-
-			vals[0] = main1(vals)
+			caps := selenium.Capabilities{"browserName": "firefox"}
+			wd,_ = selenium.NewRemote(caps, fmt.Sprintf("http://localhost:%d/wd/hub", 8081))
+			
+			vals[0] = main1(vals,wd)
 
 			msg := tgbotapi.NewMessage(update.Message.Chat.ID, vals[0])
 			//msg.ReplyToMessageID = update.Message.MessageID
@@ -118,6 +121,8 @@ func messageProcessor(bot *tgbotapi.BotAPI,update tgbotapi.Update) {
 		},
 		Finally: func() {
 			//fmt.Println("Finally called")
+			wd.Close()
+			wd.Quit()
 		},
 	}.Do()
 }

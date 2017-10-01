@@ -3,19 +3,14 @@ package main
 import (
 	"github.com/tebeka/selenium"
 	"time"
-	"fmt"
 )
 var msmartpay_email string
 var msmartpay_password string
 
-func main1(vals [3]string) string {
+func main1(vals [3]string,wd selenium.WebDriver) string {
 
-	caps := selenium.Capabilities{"browserName": "firefox"}
-	wd, err := selenium.NewRemote(caps, fmt.Sprintf("http://localhost:%d/wd/hub", 8081))
 	wd.SetAsyncScriptTimeout(5000)
 
-	defer wd.Close()
-	defer wd.Quit()
 
 	if err := wd.Get("http://super.msmartpay.in/superadmin/login.jsp"); err != nil {
 		panic(err)
@@ -41,6 +36,8 @@ func main1(vals [3]string) string {
 
 	elem,err = wd.FindElement(selenium.ByID,"reqId")
 	if err !=nil {
+		wd.Close()
+		wd.Quit()
 		panic(err)
 	}
 	elem.SendKeys(vals[0])
