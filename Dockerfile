@@ -4,7 +4,8 @@ RUN apt-get update \
 	&& apt-get install -y --no-install-recommends iceweasel xvfb xauth
 
 RUN mkdir /arpit
-COPY . /arpit/
+COPY entrypoint.sh /arpit/
+COPY scrapper /arpit/
 
 RUN wget -O geckodriver.tar.gz \
 	$(curl -s https://api.github.com/repos/mozilla/geckodriver/releases/6998290 | grep browser_download_url | grep linux64 | cut -d '"' -f 4)

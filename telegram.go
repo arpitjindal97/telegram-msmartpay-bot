@@ -104,7 +104,7 @@ func messageProcessor(bot *tgbotapi.BotAPI,update tgbotapi.Update) {
 			}
 			caps := selenium.Capabilities{"browserName": "firefox"}
 			wd,_ = selenium.NewRemote(caps, fmt.Sprintf("http://localhost:%d/wd/hub", 8081))
-			
+
 			vals[0] = main1(vals,wd)
 
 			msg := tgbotapi.NewMessage(update.Message.Chat.ID, vals[0])
