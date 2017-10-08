@@ -84,45 +84,48 @@ func messageProcessor(bot *tgbotapi.BotAPI,update tgbotapi.Update) {
 	msg := tgbotapi.NewMessage(update.Message.Chat.ID, "Processing ...")
 	bot.Send(msg)
 	var wd selenium.WebDriver
-	Block{
+	
+	for true {
+		Block{
 
-		Try: func() {
+			Try: func() {
 
-			str := update.Message.Text
-			count := 0
-			var vals [3]string
+				str := update.Message.Text
+				count := 0
+				var vals [3]string
 
-			for _, r := range str {
-				if r == ',' {
-					count++
-					continue
+				for _, r := range str {
+					if r == ',' {
+						count++
+						continue
+					}
+					vals[count] = vals[count] + string(r)
 				}
-				vals[count] = vals[count] + string(r)
-			}
-			if count == 0{
-				panic( "invalid syntax")
-			}
-			caps := selenium.Capabilities{"browserName": "firefox"}
-			wd,_ = selenium.NewRemote(caps, fmt.Sprintf("http://localhost:%d/wd/hub", 8081))
+				if count == 0 {
+					panic("invalid syntax")
+				}
+				caps := selenium.Capabilities{"browserName": "firefox"}
+				wd, _ = selenium.NewRemote(caps, fmt.Sprintf("http://localhost:%d/wd/hub", 8081))
 
-			vals[0] = main1(vals,wd)
+				vals[0] = main1(vals, wd)
 
-			msg := tgbotapi.NewMessage(update.Message.Chat.ID, vals[0])
-			//msg.ReplyToMessageID = update.Message.MessageID
+				msg := tgbotapi.NewMessage(update.Message.Chat.ID, vals[0])
+				//msg.ReplyToMessageID = update.Message.MessageID
 
-			bot.Send(msg)
+				bot.Send(msg)
 
-		},
-		Catch: func(e Exception) {
-			msg := tgbotapi.NewMessage(update.Message.Chat.ID, "Error Occured !!!")
-			fmt.Println(e)
-			bot.Send(msg)
+			},
+			Catch: func(e Exception) {
+				msg := tgbotapi.NewMessage(update.Message.Chat.ID, "Error Occured !!!")
+				fmt.Println(e)
+				bot.Send(msg)
 
-		},
-		Finally: func() {
-			//fmt.Println("Finally called")
-			wd.Close()
-			wd.Quit()
-		},
-	}.Do()
+			},
+			Finally: func() {
+				//fmt.Println("Finally called")
+				wd.Close()
+				wd.Quit()
+			},
+		}.Do()
+	}
 }
