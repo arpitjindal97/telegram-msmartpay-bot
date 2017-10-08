@@ -84,8 +84,7 @@ func messageProcessor(bot *tgbotapi.BotAPI,update tgbotapi.Update) {
 	msg := tgbotapi.NewMessage(update.Message.Chat.ID, "Processing ...")
 	bot.Send(msg)
 	var wd selenium.WebDriver
-	
-	for true {
+
 		Block{
 
 			Try: func() {
@@ -123,9 +122,11 @@ func messageProcessor(bot *tgbotapi.BotAPI,update tgbotapi.Update) {
 			},
 			Finally: func() {
 				//fmt.Println("Finally called")
-				wd.Close()
-				wd.Quit()
+				if wd!=nil {
+					wd.Close()
+					wd.Quit()
+				}
 			},
 		}.Do()
-	}
+
 }
